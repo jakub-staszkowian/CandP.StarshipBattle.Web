@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { StarshipsRoutingModule } from './starships-routing.module';
 import { CreateStarshipComponent } from './pages/create/create-starship.component';
 import { StarshipsComponent } from './starships.component';
+import { LayoutModule } from '../layout/layout.module';
 
 const PAGES_COMPONENTS = [
     StarshipsComponent,
@@ -10,7 +11,8 @@ const PAGES_COMPONENTS = [
 
 @NgModule({
     imports: [
-        StarshipsRoutingModule
+        StarshipsRoutingModule,
+        LayoutModule,
     ],
     declarations: [
         PAGES_COMPONENTS

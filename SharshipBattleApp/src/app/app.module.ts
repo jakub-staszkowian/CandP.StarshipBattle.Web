@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { StarshipsModule } from './starships/starships.module';
+import { LayoutModule } from './layout/layout.module';
 
 @NgModule({
   declarations: [
@@ -12,6 +13,7 @@ import { StarshipsModule } from './starships/starships.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    LayoutModule,
     StarshipsModule
   ],
   providers: [],
