@@ -1,0 +1,7 @@
+<mat-toolbar>
+    <div class="toolbar-item">
+    </div>
+    <div *ngFor="let tile of navigationTiles" class="toolbar-item toolbar-link">
+        <a [routerLink]="tile.link" routerLinkActive="is-active">{{ tile.text }}</a>
+    </div>
+</mat-toolbar>
