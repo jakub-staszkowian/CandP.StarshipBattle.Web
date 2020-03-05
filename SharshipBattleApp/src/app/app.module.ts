@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { StarshipsModule } from './starships/starships.module';
 import { LayoutModule } from './layout/layout.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,10 @@ import { LayoutModule } from './layout/layout.module';
     BrowserModule,
     AppRoutingModule,
     LayoutModule,
-    StarshipsModule
+    StarshipsModule,
+    BrowserAnimationsModule,
+  ],
+  exports: [
   ],
   providers: [],
   bootstrap: [AppComponent]
