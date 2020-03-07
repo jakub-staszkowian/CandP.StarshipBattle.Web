@@ -1,9 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { StarshipsComponent } from './starships.component';
-import { CreateStarshipComponent } from './pages/create/create-starship.component';
-import { EditStarshipComponent } from './pages/edit/edit-starship.component';
 import { StarshipsListComponent } from './pages/list/starships-list.component';
+import { UpsertStarshipComponent } from './pages/upsert/upsert-starship.component';
 
 const routes: Routes = [{
     path: '',
@@ -11,11 +10,11 @@ const routes: Routes = [{
     children: [
         {
             path: 'create',
-            component: CreateStarshipComponent
+            component: UpsertStarshipComponent
         },
         {
             path: 'edit',
-            component: EditStarshipComponent
+            component: UpsertStarshipComponent
         },
         {
             path: 'list',
