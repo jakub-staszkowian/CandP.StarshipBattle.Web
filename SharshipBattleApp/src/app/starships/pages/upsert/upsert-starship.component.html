@@ -1,0 +1,29 @@
+<form #createStarshipForm="ngForm">
+    <div class="input-group">
+        <div class="input-container">
+            <mat-form-field>
+                <mat-label>Starship name</mat-label>
+                <input matInput placeholder="Name of your staship" [(ngModel)]="starship.name" name="name" type="text" required>
+            </mat-form-field>
+        </div>
+        <div class="input-container">
+            <mat-form-field>
+                <mat-label>Starship image</mat-label>
+                <input matInput placeholder="Image of your starship" type="URL" name="imageUrl" [(ngModel)]="starship.imageUrl" (change)="imageUrlChanged()">
+            </mat-form-field>
+        </div>
+        <div class="input-container">
+            <img src="{{displayedImage}}" (error)="picNotLoaded($event)" style="height: 300px; width: 300px;"/>
+        </div>
+        <div class="input-container">
+            <mat-form-field>
+                <mat-label>Crew quantity</mat-label>
+                <input matInput type="number" [(ngModel)]="starship.crewQuantity" name="quantity" min="1" required>
+            </mat-form-field>
+        </div>
+        <div class="input-container">
+            <button class="default-button" [disabled]="!isStarshipValid() || createStarshipForm.invalid" (click)="saveStarship()">{{ isEditingStarship() ? 'Edit' : 'Create' }}</button>
+            <button class="default-button" *ngIf="isEditingStarship()" (click)="deleteStarship()">Delete</button>
+        </div>
+    </div>
+</form>

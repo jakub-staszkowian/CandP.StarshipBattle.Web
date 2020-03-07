@@ -11,7 +11,7 @@ export class NavbarComponent {
         link: '/home'
     },{
         text: 'View Starships',
-        link: '/home'
+        link: '/starships/list'
     },
     {
         text: 'Add Starship',
