@@ -20,7 +20,7 @@ export class UpsertStarshipComponent {
     constructor(private starshipsService: StarshipsService,
         private route: ActivatedRoute,
         private routerService: RouterService) {
-            this.getQueryParams();       
+            this.initPage();       
     }
 
     imageUrlChanged(): void {
@@ -52,7 +52,7 @@ export class UpsertStarshipComponent {
         return this.starshipId !== undefined && this.starshipId !== null && this.starshipId >= 0;
       }
 
-    private getQueryParams() {
+    private initPage() {
         this.route.queryParams
             .subscribe(params => {
                 this.starshipId = params.starshipId as number;
@@ -64,6 +64,7 @@ export class UpsertStarshipComponent {
                     this.starshipsService.getStarship(this.starshipId)
                         .then(starship => {
                             this.starship = UpsertStarshipModel.create(starship);
+                            this.imageUrlChanged();
                         })
                         .catch(() => this.routerService.navigateToCreateStarshipPage());
                 }
