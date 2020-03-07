@@ -50,7 +50,20 @@ export class UpsertStarshipComponent {
 
     isEditingStarship(): boolean {
         return this.starshipId !== undefined && this.starshipId !== null && this.starshipId >= 0;
-      }
+    }
+
+    deleteStarship(): void {
+        if (confirm("Starship will be permanently deleted. Proceed?")) {
+            this.starshipsService.delete(this.starshipId)
+                .then(() => {
+                    alert("Starship removed");
+                    this.routerService.navigateToStarshipsListPage();
+                })
+                .catch(() => {
+                    alert('Error occured, please try again later');
+                })
+        }
+    }
 
     private initPage() {
         this.route.queryParams
