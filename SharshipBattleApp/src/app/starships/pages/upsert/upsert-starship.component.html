@@ -22,8 +22,8 @@
             </mat-form-field>
         </div>
         <div class="input-container">
-            <button [disabled]="!isStarshipValid() || createStarshipForm.invalid" (click)="saveStarship()">{{ isEditingStarship() ? 'Edit' : 'Create' }}</button>
-            <button *ngIf="isEditingStarship()" (click)="deleteStarship()">Delete</button>
+            <button class="default-button" [disabled]="!isStarshipValid() || createStarshipForm.invalid" (click)="saveStarship()">{{ isEditingStarship() ? 'Edit' : 'Create' }}</button>
+            <button class="default-button" *ngIf="isEditingStarship()" (click)="deleteStarship()">Delete</button>
         </div>
     </div>
 </form>

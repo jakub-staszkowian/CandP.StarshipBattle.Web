@@ -12,3 +12,30 @@ $SharshipBattleApp-theme: mat-light-theme($SharshipBattleApp-primary, $SharshipB
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.default-button {
+    background-color: #729dd6;
+    border: none;
+    color: #FFFFFF;
+    padding: 0.7rem 1.5rem;
+    width: 7rem;
+    text-align: center;
+    text-decoration: none;
+    text-align: center;
+    display: inline-block;
+    font-size: 1rem;
+    margin: 0.1rem 0.05rem;
+    cursor: pointer;
+    border-radius: 0.5rem;
+    border: 0.15rem solid #729DD6;
+}
+
+.default-button:hover {
+    border: 0.15rem solid #1770E6;
+}
+
+.default-button:disabled {
+    background-color: #ADACAA;
+    cursor: not-allowed;
+    border: 0.15rem solid #ADACAA;
+}
