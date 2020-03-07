@@ -1,4 +1,4 @@
-<mat-list>
+<mat-list *ngIf="starshipsLoaded; else loadingInfo">
     <div *ngFor="let starship of starships" class="list-row" (click)="viewDetails(starship)">
         <mat-list-item>
             <img src="{{starship.imageUrl}}" (error)="picNotLoaded($event)" style="height: 100px; width: 100px;"/>
@@ -10,3 +10,7 @@
           </mat-list-item>
     </div>
   </mat-list>
+
+  <ng-template #loadingInfo>
+    <h1>Loading saved starships...</h1>
+  </ng-template>
