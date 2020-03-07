@@ -1,1 +1,12 @@
-<p>list</p>
+<mat-list>
+    <div *ngFor="let starship of starships" class="list-row" (click)="viewDetails(starship)">
+        <mat-list-item>
+            <img src="{{starship.imageUrl}}" (error)="picNotLoaded($event)" style="height: 100px; width: 100px;"/>
+            <h3 class="list-item"> {{starship.name}} </h3>
+            <p class="list-item">
+              <span> Crew quantity: </span>
+              <span> {{starship.crewQuantity}} </span>
+            </p>
+          </mat-list-item>
+    </div>
+  </mat-list>

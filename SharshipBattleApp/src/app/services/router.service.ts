@@ -14,7 +14,9 @@ export class RouterService {
     }
 
     navigateToEditStarshipPage(starshipId: number): void {
-        this.router.navigate(['starships', 'create', `${starshipId}`]);
+        this.router.navigate(['starships', 'edit'], { 
+            queryParams: { starshipId: starshipId}
+        });
     }
 
     navigateToCreateStarshipPage(): void {
