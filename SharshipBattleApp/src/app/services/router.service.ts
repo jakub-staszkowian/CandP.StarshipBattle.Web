@@ -30,4 +30,12 @@ export class RouterService {
     navigateToScoreboardPage(): void {
         this.router.navigate(['scoreboard']);
     }
+
+    navigateToStartGamePage(): void {
+        this.router.navigate(['starships', 'start-game']);
+    }
+
+    navigateToShowdownPage(): void {
+        this.router.navigate(['starships', 'showdown']);
+    }
 }

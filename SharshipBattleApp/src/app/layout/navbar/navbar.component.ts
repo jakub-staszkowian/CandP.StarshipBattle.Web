@@ -7,8 +7,11 @@ import { Component } from '@angular/core';
 })
 export class NavbarComponent {
     public navigationTiles: any[] = [{
+        text: 'Home',
+        link: '/'
+    },{
         text: 'Play a game',
-        link: '/home'
+        link: '/starships/start-game'
     },{
         text: 'View Starships',
         link: '/starships/list'

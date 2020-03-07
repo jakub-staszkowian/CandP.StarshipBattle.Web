@@ -7,11 +7,15 @@ import { StarshipsListComponent } from './pages/list/starships-list.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { UpsertStarshipComponent } from './pages/upsert/upsert-starship.component';
 import { CommonModule } from '@angular/common';
+import { StartGameComponent } from './pages/start-game/start-game.component';
+import { ShowdownComponent } from './pages/showdown/showdown.component';
 
 const PAGES_COMPONENTS = [
     StarshipsComponent,
     StarshipsListComponent,
     UpsertStarshipComponent,
+    StartGameComponent,
+    ShowdownComponent,
 ];
 
 @NgModule({
