@@ -11,7 +11,7 @@ import { RouterService } from 'src/app/services/router.service';
 export class StarshipsListComponent implements OnInit {
     
     starships: Starship[] = [];
-    defaultImageUrl: string = 'assets/starship-default.jpg';
+    starshipsLoaded: boolean = false;
 
     constructor(private starshipsService: StarshipsService,
         private routerService: RouterService) {
@@ -20,17 +20,13 @@ export class StarshipsListComponent implements OnInit {
     ngOnInit(): void {
         this.starshipsService.getAll()
             .then(starships => {
-                console.log(starships);
                 this.starships = starships;
-                console.log(this.starships);
+                this.starshipsLoaded = true;
             })
             .catch(() => {
                 this.starships = [];
+                this.starshipsLoaded = false;
             });
-    }
-
-    picNotLoaded(event: any): void {
-        event.target.src = this.defaultImageUrl;
     }
 
     viewDetails(starship: Starship) {

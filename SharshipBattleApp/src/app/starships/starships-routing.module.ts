@@ -3,6 +3,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { StarshipsComponent } from './starships.component';
 import { StarshipsListComponent } from './pages/list/starships-list.component';
 import { UpsertStarshipComponent } from './pages/upsert/upsert-starship.component';
+import { StartGameComponent } from './pages/start-game/start-game.component';
+import { ShowdownComponent } from './pages/showdown/showdown.component';
 
 const routes: Routes = [{
     path: '',
@@ -19,6 +21,14 @@ const routes: Routes = [{
         {
             path: 'list',
             component: StarshipsListComponent
+        },
+        {
+            path: 'start-game',
+            component: StartGameComponent
+        },
+        {
+            path: 'showdown',
+            component: ShowdownComponent
         }]
 }];
 

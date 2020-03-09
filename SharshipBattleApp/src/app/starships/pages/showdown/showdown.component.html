@@ -1,0 +1,29 @@
+<div class="scoreboard">
+    <div><strong>SCOREBOARD:</strong></div>
+    <br/>
+    <ngx-score [username]="username" [userScore]="userScore"></ngx-score>
+    <ngx-score [username]="'CPU'" [userScore]="cpuScore"></ngx-score>
+</div>
+
+<mat-grid-list cols="2" rowHeight="2:1">
+    <mat-grid-tile>
+        <ngx-player-card [starship]="userStarship">            
+        </ngx-player-card>
+    </mat-grid-tile>
+    <mat-grid-tile>
+        <ngx-player-card [starship]="cpuStarship">            
+        </ngx-player-card>
+    </mat-grid-tile>
+</mat-grid-list>
+
+<div class="results">
+    <div *ngIf="dataLoaded; else loading">{{showdownResult}}</div>
+</div>
+
+<div class="actions">
+    <button class="secondary-button action-button" (click)="restartGame()">Play again</button>
+</div>
+
+<ng-template #loading>
+    <h1>Loading data...</h1>
+</ng-template>

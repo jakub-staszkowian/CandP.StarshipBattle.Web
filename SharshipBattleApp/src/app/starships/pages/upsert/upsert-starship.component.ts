@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { UpsertStarshipModel } from '../../models/upsert-starship.model';
 import { StarshipsService } from '../../services/starships.service';
 import { ActivatedRoute } from '@angular/router';
@@ -9,31 +9,24 @@ import { RouterService } from 'src/app/services/router.service';
     templateUrl: './upsert-starship.component.html',
     styleUrls: [ './upsert-starship.component.scss' ]
 })
-export class UpsertStarshipComponent {
+export class UpsertStarshipComponent implements OnInit {
 
     starship: UpsertStarshipModel = new UpsertStarshipModel();
-    defaultImageUrl: string = 'assets/starship-default.jpg';
-    displayedImage: string = this.defaultImageUrl;
     imageToShow: any;
     starshipId: number;
 
     constructor(private starshipsService: StarshipsService,
         private route: ActivatedRoute,
-        private routerService: RouterService) {
-            this.initPage();       
+        private routerService: RouterService) {               
     }
 
-    imageUrlChanged(): void {
-        this.displayedImage = this.starship.imageUrl;
+    ngOnInit(): void {
+        this.initPage();    
     }
 
     isStarshipValid(): boolean {
         return this.starship.crewQuantity > 0
             && this.starship.name.length > 0;
-    }
-
-    picNotLoaded(event: any): void {
-        event.target.src = this.defaultImageUrl;
     }
 
     saveStarship(): void {
@@ -77,7 +70,6 @@ export class UpsertStarshipComponent {
                     this.starshipsService.getStarship(this.starshipId)
                         .then(starship => {
                             this.starship = UpsertStarshipModel.create(starship);
-                            this.imageUrlChanged();
                         })
                         .catch(() => this.routerService.navigateToCreateStarshipPage());
                 }
