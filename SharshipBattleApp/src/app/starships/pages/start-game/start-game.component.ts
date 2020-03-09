@@ -8,8 +8,12 @@ import { RouterService } from 'src/app/services/router.service';
 })
 export class StartGameComponent {
 
+    username: string = '';
+
     constructor(private routerService: RouterService) {
-        this.routerService.navigateToShowdownPage();
     }
 
+    startGame(): void {
+        this.routerService.navigateToShowdownPage(this.username);
+    }
 }

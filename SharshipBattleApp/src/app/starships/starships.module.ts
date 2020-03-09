@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { MatInputModule, MatListModule, MatGridListModule } from '@angular/material';
+import { MatInputModule, MatListModule, MatGridListModule, MatCardModule } from '@angular/material';
 import { StarshipsRoutingModule } from './starships-routing.module';
 import { StarshipsComponent } from './starships.component';
 import { LayoutModule } from '../layout/layout.module';
@@ -33,6 +33,7 @@ const DIRECTIVES = [
         MatInputModule,
         MatListModule,
         MatGridListModule,
+        MatCardModule,
         CommonModule,
         FormsModule,
         ReactiveFormsModule,

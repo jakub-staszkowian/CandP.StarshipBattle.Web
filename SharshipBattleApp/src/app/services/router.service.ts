@@ -35,7 +35,9 @@ export class RouterService {
         this.router.navigate(['starships', 'start-game']);
     }
 
-    navigateToShowdownPage(): void {
-        this.router.navigate(['starships', 'showdown']);
+    navigateToShowdownPage(username: string): void {
+        this.router.navigate(['starships', 'showdown'], { 
+            queryParams: { username: username}
+        });
     }
 }
