@@ -1,7 +1,7 @@
 <mat-list *ngIf="starshipsLoaded; else loadingInfo">
     <div *ngFor="let starship of starships" class="list-row" (click)="viewDetails(starship)">
         <mat-list-item>
-            <img [src]="starship.imageUrl" default style="height: 100px; width: 100px;"/>
+            <img [src]="starship.imageUrl" default class="image-small"/>
             <h3 class="list-item"> {{starship.name}} </h3>
             <p class="list-item">
               <span> Crew quantity: </span>

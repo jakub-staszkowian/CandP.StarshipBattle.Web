@@ -1,5 +1,6 @@
 @import '~@angular/material/theming';
 @import './app/layout/styles/custom-styles.scss';
+@import './variables.scss';
 
 @include mat-core();
 
@@ -13,12 +14,10 @@ $SharshipBattleApp-theme: mat-light-theme($SharshipBattleApp-primary, $SharshipB
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
-.default-button {
-    background-color: #729dd6;
+%button-shared {
     border: none;
-    color: #FFFFFF;
     padding: 0.7rem 1.5rem;
-    width: 7rem;
+    min-width: 7rem;
     text-align: center;
     text-decoration: none;
     text-align: center;
@@ -27,15 +26,46 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     margin: 0.1rem 0.05rem;
     cursor: pointer;
     border-radius: 0.5rem;
-    border: 0.15rem solid #729DD6;
 }
 
-.default-button:hover {
-    border: 0.15rem solid #1770E6;
+.primary-button {
+    @extend %button-shared;
+    background-color: $primary-color;
+    border: 0.15rem solid $primary-color;
 }
 
-.default-button:disabled {
-    background-color: #ADACAA;
+.primary-button:hover {
+    border: 0.15rem solid $hover-primary-color;
+}
+
+.primary-button:disabled,
+.secondary-button:disabled {
+    background-color: $disabled-color;
     cursor: not-allowed;
-    border: 0.15rem solid #ADACAA;
+    border: 0.15rem solid $disabled-color;
+}
+
+.secondary-button {
+    @extend %button-shared;
+    background-color: $secondary-color;
+    border: 0.15rem solid $secondary-color;
+}
+
+.secondary-button:hover {
+    border: 0.15rem solid $hover-secondary-color;
+}
+
+.image-small {
+    height: 100px;
+    width: 100px;
+}
+
+.image-medium {
+    height: 200px;
+    width: 200px;
+}
+
+.image-big {
+    height: 300px;
+    width: 300px;
 }
