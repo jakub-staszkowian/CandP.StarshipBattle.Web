@@ -12,7 +12,6 @@ export class DefaultImageDirective {
     defaultImageUrl: string = 'assets/starship-default.jpg';
   
     updateUrl() {
-        console.log('invoked');
         this.src = this.defaultImageUrl;
     }
 }
