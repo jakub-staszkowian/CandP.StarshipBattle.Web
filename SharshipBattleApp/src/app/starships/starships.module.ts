@@ -9,6 +9,9 @@ import { UpsertStarshipComponent } from './pages/upsert/upsert-starship.componen
 import { CommonModule } from '@angular/common';
 import { StartGameComponent } from './pages/start-game/start-game.component';
 import { ShowdownComponent } from './pages/showdown/showdown.component';
+import { ScoreComponent } from './pages/score/score.component';
+import { PlayerCardComponent } from './pages/player-card/player-card.component';
+import { DefaultImageDirective } from './directives/default-image.directive';
 
 const PAGES_COMPONENTS = [
     StarshipsComponent,
@@ -16,7 +19,13 @@ const PAGES_COMPONENTS = [
     UpsertStarshipComponent,
     StartGameComponent,
     ShowdownComponent,
+    ScoreComponent,
+    PlayerCardComponent
 ];
+
+const DIRECTIVES = [
+    DefaultImageDirective
+]
 
 @NgModule({
     imports: [
@@ -30,7 +39,8 @@ const PAGES_COMPONENTS = [
         LayoutModule,
     ],
     declarations: [
-        PAGES_COMPONENTS
+        PAGES_COMPONENTS,
+        DIRECTIVES
     ]
 })
 export class StarshipsModule {

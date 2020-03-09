@@ -9,11 +9,11 @@
         <div class="input-container">
             <mat-form-field>
                 <mat-label>Starship image</mat-label>
-                <input matInput placeholder="Image of your starship" type="URL" name="imageUrl" [(ngModel)]="starship.imageUrl" (change)="imageUrlChanged()">
+                <input matInput placeholder="Image of your starship" type="URL" name="imageUrl" [(ngModel)]="starship.imageUrl">
             </mat-form-field>
         </div>
         <div class="input-container">
-            <img src="{{displayedImage}}" (error)="picNotLoaded($event)" style="height: 300px; width: 300px;"/>
+            <img [src]="starship.imageUrl" default style="height: 300px; width: 300px;"/>
         </div>
         <div class="input-container">
             <mat-form-field>
