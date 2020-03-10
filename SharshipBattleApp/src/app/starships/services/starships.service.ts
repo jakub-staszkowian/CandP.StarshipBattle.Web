@@ -41,7 +41,6 @@ export class StarshipsService {
 
     edit(id: number, starship: UpsertStarshipModel): Promise<void> {
         const url = `${this.starshipsEndpointUrl}/${id.toString()}`;
-        console.log(starship);
         return this.httpCilent
             .put<void>(url, starship.toUpsertStarshipRequest())
             .toPromise();
