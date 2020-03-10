@@ -1,0 +1,13 @@
+<form #startGameForm="ngForm">
+    <div class="input-group">
+        <div class="input-container">
+            <mat-form-field>
+                <mat-label>Provide user name</mat-label>
+                <input matInput placeholder="Your name in game" [(ngModel)]="username" name="name" type="text" required>
+            </mat-form-field>
+        </div>
+        <div class="input-container">
+            <button class="primary-button" [disabled]="startGameForm.invalid" (click)="startGame()">Start game!</button>
+        </div>
+    </div>
+</form>

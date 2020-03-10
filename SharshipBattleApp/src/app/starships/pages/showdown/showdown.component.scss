@@ -1,0 +1,23 @@
+@import './../../../../variables.scss';
+
+.action-button {
+    margin: 0 auto;
+    display: block;
+}
+
+.scoreboard {
+    border: 2px double $secondary-color;
+    max-width: fit-content;
+    padding: 1rem;
+
+}
+
+.results {
+    font-size: 2rem;
+    text-align: center;
+    padding: 1.5rem 0;
+}
+
+.actions {
+    padding: 0.1rem;
+}
